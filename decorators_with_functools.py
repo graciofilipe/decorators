@@ -1,7 +1,8 @@
 import time
-
+from functools import wraps
 def logtime(fun):
-
+    
+    @wraps(fun)
     def wrapper(*args, **kwargs):
         start_time = time.time()
         result = fun(*args, **kwargs)
